@@ -1,0 +1,7 @@
+{
+  "realm" : "demo",
+  "resource" : "database-service",
+  "auth-server-url": "http://localhost:8080/auth",
+  "bearer-only" : true,
+  "ssl-required" : "external"
+}

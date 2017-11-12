@@ -1,0 +1,8 @@
+<h3>Important details</h3>
+<div class="grid grid-pad">
+    <div *ngFor="let detail of details" [routerLink]="['/detail', detail.detail1]" class="col-1-4">
+        <div class="module details">
+            <h4>{{detail.detail1}}</h4>
+        </div>
+    </div>
+</div>

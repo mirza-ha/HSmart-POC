@@ -1,0 +1,50 @@
+<button (click)="turnOn()">View Details</button>
+<button (click)="clearSelection()">Clear selection</button>
+
+<mat-checkbox class="example-margin"  [(ngModel)]="shown" (click)="turnOn()">Show it</mat-checkbox>
+
+
+<!--<detail-details [detail]="selectedDetail"></detail-details>-->
+
+<div>
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+                <td style="width: 70%;">
+                    <ul *ngIf="details" type="I" class="nekicss1">
+                        <li *ngFor="let detail of details" style="float:none" 
+                            (click)="onSelect(detail)" 
+                            [class.selected]="(detail === selectedDetails[0]) || (detail === selectedDetails[1])">
+                            <span class="badge">{{detail.detail1}}</span>
+                            <span class="nekicss2"><mat-slide-toggle [checked]="detail.selected" [disabled]="true">{{detail.detail2}}</mat-slide-toggle></span>
+                        </li>
+                    </ul>
+                </td>
+                <td style="width: 30%;">
+                    <div *ngIf="selectedDetail">
+                        <table-cell1 [detail]="selectedDetail"></table-cell1>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <table style="width: 100%;" border="0">
+        <tbody>
+            <tr>
+                <td style="width: 50%;">
+                    <div *ngIf="selectCount>=1">
+                        <table-cell1 [detail]="selectedDetails[0]"></table-cell1>
+                    </div>
+                </td>
+                <td style="width: 50%;">
+                    <div *ngIf="selectCount==2">
+                        <table-cell1 [detail]="selectedDetails[1]"></table-cell1>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

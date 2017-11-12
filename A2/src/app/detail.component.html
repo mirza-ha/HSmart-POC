@@ -1,0 +1,10 @@
+
+  <div *ngIf="detail">
+      <h2>{{detail.detail1}} details!</h2>
+      <div><label>Detail desc:</label> {{detail.detail2}}</div>
+    <label>Detail edit:</label> 
+    <input [(ngModel)]="detail.detail2" placeholder="detail1">
+    <button (click)="goBack()">Back</button>
+  </div>
+
+
